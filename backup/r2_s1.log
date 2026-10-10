@@ -56,3 +56,7 @@ r0_f4_fixed_vit_b_16: acc=0.976 f1=0.957 (266s)
 SHARD DONE
 /kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
   scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f0_hat384_densenet121: acc=0.978 f1=0.919 (343s)
+r0_f1_hat384_densenet121: acc=0.961 f1=0.894 (326s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
