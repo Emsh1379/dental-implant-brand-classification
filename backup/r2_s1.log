@@ -60,3 +60,13 @@ r0_f0_hat384_densenet121: acc=0.978 f1=0.919 (343s)
 r0_f1_hat384_densenet121: acc=0.961 f1=0.894 (326s)
 /kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
   scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f2_hat384_densenet121: acc=0.973 f1=0.921 (330s)
+r0_f3_hat384_densenet121: acc=0.987 f1=0.964 (326s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f4_hat384_densenet121: acc=0.969 f1=0.946 (332s)
+SHARD DONE
+Downloading: "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth" to /root/.cache/torch/hub/checkpoints/efficientnet_b0_rwightman-7f5810bc.pth
+  0%|          | 0.00/20.5M [00:00<?, ?B/s]100%|██████████| 20.5M/20.5M [00:00<00:00, 239MB/s]
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
