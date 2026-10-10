@@ -36,3 +36,14 @@ r0_f4_raw_resnet50: acc=0.980 f1=0.976 (90s)
 /kaggle/working/dental_cls/train_cv.py:87: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
   scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
 r0_f4_raw_efficientnet_b0: acc=0.963 f1=0.916 (85s)
+r0_f4_pipeline_custom_cnn: acc=0.929 f1=0.857 (140s)
+/kaggle/working/dental_cls/train_cv.py:87: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f4_pipeline_resnet50: acc=0.959 f1=0.909 (90s)
+r0_f4_pipeline_efficientnet_b0: acc=0.963 f1=0.919 (65s)
+r0_f4_hat_custom_cnn: acc=0.901 f1=0.817 (140s)
+/kaggle/working/dental_cls/train_cv.py:87: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f4_hat_resnet50: acc=0.976 f1=0.966 (90s)
+r0_f4_hat_efficientnet_b0: acc=0.956 f1=0.911 (64s)
+SHARD DONE
