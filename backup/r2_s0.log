@@ -48,3 +48,6 @@ SHARD DONE
 r0_f0_ab_no_sharpen_vit_b_16: acc=0.975 f1=0.928 (271s)
 r0_f0_ab_no_clahe_vit_b_16: acc=0.965 f1=0.878 (271s)
 r0_f0_ab_no_rescale_vit_b_16: acc=0.956 f1=0.867 (271s)
+r0_f0_ch3_vit_b_16: acc=0.965 f1=0.897 (273s)
+r0_f1_ab_no_blur_vit_b_16: acc=0.958 f1=0.898 (265s)
+r0_f1_ab_no_unsharp_vit_b_16: acc=0.961 f1=0.885 (265s)

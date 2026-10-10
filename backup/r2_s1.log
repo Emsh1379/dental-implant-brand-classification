@@ -35,3 +35,9 @@ SHARD DONE
 r0_f0_ab_no_blur_vit_b_16: acc=0.959 f1=0.887 (270s)
 r0_f0_ab_no_unsharp_vit_b_16: acc=0.965 f1=0.885 (268s)
 r0_f0_fixed_vit_b_16: acc=0.962 f1=0.894 (268s)
+r0_f1_ab_no_sharpen_vit_b_16: acc=0.970 f1=0.941 (262s)
+r0_f1_ab_no_clahe_vit_b_16: acc=0.976 f1=0.935 (262s)
+r0_f1_ab_no_rescale_vit_b_16: acc=0.952 f1=0.900 (261s)
+r0_f1_ch3_vit_b_16: acc=0.973 f1=0.923 (264s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
