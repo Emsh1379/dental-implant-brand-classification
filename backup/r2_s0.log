@@ -82,3 +82,9 @@ SHARD DONE
   scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
 r0_f0_raw384_efficientnet_b0: acc=0.978 f1=0.926 (278s)
 r0_f1_raw384_efficientnet_b0: acc=0.970 f1=0.903 (196s)
+r0_f2_raw384_efficientnet_b0: acc=0.985 f1=0.963 (198s)
+r0_f3_raw384_efficientnet_b0: acc=0.974 f1=0.936 (207s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f4_raw384_efficientnet_b0: acc=0.983 f1=0.970 (210s)
+SHARD DONE
