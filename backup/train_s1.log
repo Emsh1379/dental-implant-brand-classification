@@ -1,0 +1,52 @@
+Downloading: "https://download.pytorch.org/models/vgg16-397923af.pth" to /root/.cache/torch/hub/checkpoints/vgg16-397923af.pth
+  0%|          | 0.00/528M [00:00<?, ?B/s]  2%|▏         | 10.1M/528M [00:00<00:05, 105MB/s]  6%|▋         | 33.6M/528M [00:00<00:02, 188MB/s] 10%|█         | 55.1M/528M [00:00<00:02, 205MB/s] 15%|█▍        | 76.8M/528M [00:00<00:02, 213MB/s] 19%|█▉        | 99.2M/528M [00:00<00:02, 221MB/s] 23%|██▎       | 121M/528M [00:00<00:01, 225MB/s]  27%|██▋       | 144M/528M [00:00<00:01, 228MB/s] 31%|███▏      | 166M/528M [00:00<00:01, 228MB/s] 36%|███▌      | 188M/528M [00:00<00:01, 231MB/s] 40%|███▉      | 210M/528M [00:01<00:01, 229MB/s] 44%|████▍     | 232M/528M [00:01<00:01, 223MB/s] 48%|████▊     | 254M/528M [00:01<00:01, 212MB/s] 52%|█████▏    | 274M/528M [00:01<00:01, 201MB/s] 56%|█████▋    | 298M/528M [00:01<00:01, 214MB/s] 61%|██████    | 320M/528M [00:01<00:00, 221MB/s] 65%|██████▌   | 344M/528M [00:01<00:00, 227MB/s] 70%|██████▉   | 368M/528M [00:01<00:00, 235MB/s] 74%|███████▍  | 393M/528M [00:01<00:00, 242MB/s] 79%|███████▉  | 416M/528M [00:01<00:00, 244MB/s] 83%|████████▎ | 440M/528M [00:02<00:00, 243MB/s] 88%|████████▊ | 463M/528M [00:02<00:00, 243MB/s] 92%|█████████▏| 486M/528M [00:02<00:00, 242MB/s] 97%|█████████▋| 510M/528M [00:02<00:00, 240MB/s]100%|██████████| 528M/528M [00:02<00:00, 227MB/s]
+r0_f0_raw_vgg16: acc=0.984 f1=0.938 (198s)
+Downloading: "https://download.pytorch.org/models/densenet121-a639ec97.pth" to /root/.cache/torch/hub/checkpoints/densenet121-a639ec97.pth
+  0%|          | 0.00/30.8M [00:00<?, ?B/s] 24%|██▍       | 7.38M/30.8M [00:00<00:00, 77.0MB/s] 88%|████████▊ | 27.2M/30.8M [00:00<00:00, 154MB/s] 100%|██████████| 30.8M/30.8M [00:00<00:00, 151MB/s]
+/kaggle/working/dental_cls/train_cv.py:87: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f0_raw_densenet121: acc=0.972 f1=0.900 (127s)
+Downloading: "https://download.pytorch.org/models/vit_b_16-c867db91.pth" to /root/.cache/torch/hub/checkpoints/vit_b_16-c867db91.pth
+  0%|          | 0.00/330M [00:00<?, ?B/s]  2%|▏         | 5.88M/330M [00:00<00:05, 61.4MB/s]  4%|▍         | 14.4M/330M [00:00<00:04, 77.1MB/s] 10%|█         | 33.6M/330M [00:00<00:02, 134MB/s]  16%|█▌        | 53.2M/330M [00:00<00:01, 162MB/s] 22%|██▏       | 73.5M/330M [00:00<00:01, 180MB/s] 28%|██▊       | 93.6M/330M [00:00<00:01, 190MB/s] 34%|███▍      | 114M/330M [00:00<00:01, 197MB/s]  40%|████      | 133M/330M [00:00<00:01, 195MB/s] 46%|████▌     | 151M/330M [00:00<00:00, 190MB/s] 51%|█████▏    | 170M/330M [00:01<00:00, 188MB/s] 57%|█████▋    | 188M/330M [00:01<00:00, 181MB/s] 62%|██████▏   | 205M/330M [00:01<00:00, 178MB/s] 67%|██████▋   | 222M/330M [00:01<00:00, 176MB/s] 73%|███████▎  | 240M/330M [00:01<00:00, 178MB/s] 78%|███████▊  | 257M/330M [00:01<00:00, 180MB/s] 83%|████████▎ | 274M/330M [00:01<00:00, 180MB/s] 88%|████████▊ | 292M/330M [00:01<00:00, 180MB/s] 94%|█████████▎| 309M/330M [00:01<00:00, 179MB/s] 99%|█████████▉| 327M/330M [00:01<00:00, 183MB/s]100%|██████████| 330M/330M [00:01<00:00, 177MB/s]
+r0_f0_raw_vit_b_16: acc=0.981 f1=0.919 (270s)
+r0_f0_pipeline_vgg16: acc=0.972 f1=0.917 (192s)
+/kaggle/working/dental_cls/train_cv.py:87: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f0_pipeline_densenet121: acc=0.962 f1=0.883 (119s)
+r0_f0_pipeline_vit_b_16: acc=0.956 f1=0.878 (268s)
+r0_f0_hat_vgg16: acc=0.984 f1=0.947 (192s)
+/kaggle/working/dental_cls/train_cv.py:87: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f0_hat_densenet121: acc=0.968 f1=0.892 (119s)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 1004, in save
+    _save(
+    ~~~~~^
+        obj,
+        ^^^^
+    ...<3 lines>...
+        _disable_byteorder_record,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 1313, in _save
+    zip_file.write_record(name, storage, num_bytes)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: basic_ios::clear: iostream error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/kaggle/working/dental_cls/train_cv.py", line 129, in <module>
+    run_job(job, cache[v], meta, folds, out, dev, ck)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/working/dental_cls/train_cv.py", line 101, in run_job
+    torch.save(best_state, ckpt_dir / f"{tag}.pt")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 1003, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 835, in __exit__
+    self.file_like.write_end_of_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: [enforce fail at inline_container.cc:672] . unexpected pos 258176896 vs 258176784

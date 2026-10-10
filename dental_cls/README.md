@@ -9,3 +9,16 @@ Pipeline (run in this order, see script docstrings):
 5. `gradcam.py` – Grad-CAM panels from the fold-0 checkpoints.
 
 Caveat: the `raw` version is the HAT image area-downsampled to 640px, a proxy for the original Roboflow download.
+
+## Backup / resuming after a Kaggle disconnect
+
+`backup/` holds everything needed to continue without recomputing finished work: per-job result JSONs
+(`backup/results`, one per rep/fold/version/model, with test probabilities), the fold definitions and crop
+metadata (`backup/crops/folds.json`, `meta.csv`, `meta_groups.csv`, `dhash.npy`) and the training logs.
+Large, rebuildable artefacts (crops `.npy`, checkpoints, raw dataset) are not stored in git.
+
+To resume on a fresh server:
+1. Download `Mesh2001/Dental_implant` from Hugging Face, unzip `Teeth-Segmentation-ToothFairy-1-enahnced.zip` to `/tmp/data/toothfairy`.
+2. `python prep_crops.py` (rebuilds the crop arrays; row order matches `backup/crops/meta.csv`).
+3. Copy `backup/crops/folds.json` to `/tmp/data/crops/` (do not re-run `make_folds.py`) and `backup/results/*.json` to `/kaggle/working/results/`.
+4. `python train_cv.py ...` – finished jobs are skipped automatically.
