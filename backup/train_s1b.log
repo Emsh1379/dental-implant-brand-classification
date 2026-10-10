@@ -6,3 +6,5 @@ r0_f1_raw_densenet121: acc=0.982 f1=0.949 (134s)
 r0_f1_raw_vit_b_16: acc=0.976 f1=0.920 (262s)
 /kaggle/working/dental_cls/train_cv.py:87: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
   scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f1_pipeline_vgg16: acc=0.958 f1=0.858 (187s)
+r0_f1_pipeline_densenet121: acc=0.961 f1=0.897 (117s)
