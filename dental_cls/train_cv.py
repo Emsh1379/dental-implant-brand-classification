@@ -13,8 +13,10 @@ MEAN = torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
 STD = torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
 
 
-def prep(x, dev):  # uint8 [B,224,224] -> normalised float [B,3,224,224]
-    x = x.to(dev).float().div(255).unsqueeze(1).expand(-1, 3, -1, -1)
+def prep(x, dev):  # uint8 [B,H,W] (grey, replicated) or [B,3,H,W] (multi-channel) -> normalised float [B,3,H,W]
+    x = x.to(dev).float().div(255)
+    if x.ndim == 3:
+        x = x.unsqueeze(1).expand(-1, 3, -1, -1)
     return (x - MEAN.to(dev)) / STD.to(dev)
 
 
