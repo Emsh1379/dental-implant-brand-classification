@@ -1,0 +1,55 @@
+test,model,a,b,p,note,p_holm
+paired t (fold macro-F1),custom_cnn,raw,pipeline,0.31498282336462763,Δ=-0.039,1.0
+wilcoxon (fold macro-F1),custom_cnn,raw,pipeline,0.3125,,1.0
+McNemar (pooled OOF),custom_cnn,raw,pipeline,4.163933284650944e-07,b=130 c=60,7.495079912371699e-06
+paired t (fold macro-F1),custom_cnn,raw,hat,0.31059096552719373,Δ=-0.020,1.0
+wilcoxon (fold macro-F1),custom_cnn,raw,hat,0.3125,,1.0
+McNemar (pooled OOF),custom_cnn,raw,hat,0.2614694362863877,b=54 c=42,1.0
+paired t (fold macro-F1),custom_cnn,pipeline,hat,0.5684994882472061,Δ=+0.019,1.0
+wilcoxon (fold macro-F1),custom_cnn,pipeline,hat,0.8125,,1.0
+McNemar (pooled OOF),custom_cnn,pipeline,hat,5.432159525818111e-05,b=72 c=130,0.0009234671193890789
+paired t (fold macro-F1),densenet121,raw,pipeline,0.005735366112203533,Δ=-0.033,0.1032365900196636
+wilcoxon (fold macro-F1),densenet121,raw,pipeline,0.0625,,1.0
+McNemar (pooled OOF),densenet121,raw,pipeline,0.00019107642583549023,b=30 c=7,0.0030572228133678436
+paired t (fold macro-F1),densenet121,raw,hat,0.692908800564368,Δ=-0.004,1.0
+wilcoxon (fold macro-F1),densenet121,raw,hat,0.4375,,1.0
+McNemar (pooled OOF),densenet121,raw,hat,0.1670684814453125,b=13 c=6,1.0
+paired t (fold macro-F1),densenet121,pipeline,hat,0.0418353171079993,Δ=+0.029,0.6275297566199896
+wilcoxon (fold macro-F1),densenet121,pipeline,hat,0.0625,,1.0
+McNemar (pooled OOF),densenet121,pipeline,hat,0.019520472782460274,b=13 c=29,0.25376614617198356
+paired t (fold macro-F1),efficientnet_b0,raw,pipeline,0.8439391561368446,Δ=+0.003,1.0
+wilcoxon (fold macro-F1),efficientnet_b0,raw,pipeline,1.0,,1.0
+McNemar (pooled OOF),efficientnet_b0,raw,pipeline,0.6146550157654618,b=29 c=34,1.0
+paired t (fold macro-F1),efficientnet_b0,raw,hat,0.1311487190668786,Δ=+0.019,1.0
+wilcoxon (fold macro-F1),efficientnet_b0,raw,hat,0.3125,,1.0
+McNemar (pooled OOF),efficientnet_b0,raw,hat,0.11018416518345475,b=11 c=21,1.0
+paired t (fold macro-F1),efficientnet_b0,pipeline,hat,0.18043851909316608,Δ=+0.017,1.0
+wilcoxon (fold macro-F1),efficientnet_b0,pipeline,hat,0.1875,,1.0
+McNemar (pooled OOF),efficientnet_b0,pipeline,hat,0.5758493477318467,b=23 c=28,1.0
+paired t (fold macro-F1),resnet50,raw,pipeline,0.5606268194600366,Δ=-0.012,1.0
+wilcoxon (fold macro-F1),resnet50,raw,pipeline,0.625,,1.0
+McNemar (pooled OOF),resnet50,raw,pipeline,0.3603776529357674,b=25 c=18,1.0
+paired t (fold macro-F1),resnet50,raw,hat,0.8535735942898346,Δ=-0.002,1.0
+wilcoxon (fold macro-F1),resnet50,raw,hat,1.0,,1.0
+McNemar (pooled OOF),resnet50,raw,hat,0.7428293587290682,b=20 c=17,1.0
+paired t (fold macro-F1),resnet50,pipeline,hat,0.45755610515229905,Δ=+0.010,1.0
+wilcoxon (fold macro-F1),resnet50,pipeline,hat,0.625,,1.0
+McNemar (pooled OOF),resnet50,pipeline,hat,0.6888797607233395,b=26 c=30,1.0
+paired t (fold macro-F1),vgg16,raw,pipeline,0.37270485268531994,Δ=-0.012,1.0
+wilcoxon (fold macro-F1),vgg16,raw,pipeline,0.4375,,1.0
+McNemar (pooled OOF),vgg16,raw,pipeline,0.5327092552361137,b=23 c=18,1.0
+paired t (fold macro-F1),vgg16,raw,hat,0.7323179386720307,Δ=+0.002,1.0
+wilcoxon (fold macro-F1),vgg16,raw,hat,1.0,,1.0
+McNemar (pooled OOF),vgg16,raw,hat,1.0,b=12 c=13,1.0
+paired t (fold macro-F1),vgg16,pipeline,hat,0.34755738986195595,Δ=+0.014,1.0
+wilcoxon (fold macro-F1),vgg16,pipeline,hat,0.3125,,1.0
+McNemar (pooled OOF),vgg16,pipeline,hat,0.4050322461407632,b=15 c=21,1.0
+paired t (fold macro-F1),vit_b_16,raw,pipeline,0.030860646319189,Δ=-0.026,0.493770341107024
+wilcoxon (fold macro-F1),vit_b_16,raw,pipeline,0.125,,1.0
+McNemar (pooled OOF),vit_b_16,raw,pipeline,0.0029350556433200836,b=26 c=8,0.044025834649801254
+paired t (fold macro-F1),vit_b_16,raw,hat,0.6318684465812245,Δ=+0.004,1.0
+wilcoxon (fold macro-F1),vit_b_16,raw,hat,0.8125,,1.0
+McNemar (pooled OOF),vit_b_16,raw,hat,1.0,b=10 c=9,1.0
+paired t (fold macro-F1),vit_b_16,pipeline,hat,0.00762286341094729,Δ=+0.031,0.12958867798610393
+wilcoxon (fold macro-F1),vit_b_16,pipeline,hat,0.0625,,1.0
+McNemar (pooled OOF),vit_b_16,pipeline,hat,0.005988120567053557,b=9 c=26,0.0838336879387498
