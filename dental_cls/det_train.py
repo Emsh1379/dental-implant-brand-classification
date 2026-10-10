@@ -14,7 +14,7 @@ from pycocotools.cocoeval import COCOeval
 from sklearn.metrics import f1_score
 
 DET, RUNS, RES = Path("/tmp/data/det"), Path(os.environ.get("DET_RUNS", "/tmp/data/det_runs")), Path(os.environ.get("DET_RES", "/kaggle/working/det_results"))
-EPOCHS = {"yolo11n": 30, "rfdetr_small": 30}
+EPOCHS = {"yolo11n": 30, "yolo11n_gtroi": 30, "rfdetr_small": 30}
 if os.environ.get("DET_EPOCHS"):  # smoke test
     EPOCHS = {k: int(os.environ["DET_EPOCHS"]) for k in EPOCHS}
 
@@ -51,13 +51,13 @@ def evaluate(gt_path, dets):
     return out
 
 
-def run_yolo(k, dev):
+def run_yolo(k, dev, det=DET, tag="yolo11n"):
     from ultralytics import YOLO
-    root = DET / f"fold{k}"
+    root = det / f"fold{k}"
     m = YOLO("yolo11n.pt")
-    m.train(data=str(root / "yolo" / "data.yaml"), epochs=EPOCHS["yolo11n"], imgsz=640, batch=16, device=dev, seed=k,
-            project=str(RUNS), name=f"yolo11n_f{k}", exist_ok=True, workers=4, plots=False, verbose=False)
-    best = YOLO(str(RUNS / f"yolo11n_f{k}" / "weights" / "best.pt"))
+    m.train(data=str(root / "yolo" / "data.yaml"), epochs=EPOCHS[tag], imgsz=640, batch=16, device=dev, seed=k,
+            project=str(RUNS), name=f"{tag}_f{k}", exist_ok=True, workers=4, plots=False, verbose=False)
+    best = YOLO(str(RUNS / f"{tag}_f{k}" / "weights" / "best.pt"))
     gt = json.load(open(root / "coco" / "test" / "_annotations.coco.json"))
     dets = []
     for im in gt["images"]:
@@ -100,8 +100,12 @@ if __name__ == "__main__":
         except FileExistsError:
             continue
         t0 = time.time()
-        dets = (run_yolo if m == "yolo11n" else run_rfdetr)(k, 0)
-        r = evaluate(DET / f"fold{k}" / "coco" / "test" / "_annotations.coco.json", dets)
+        det = Path("/tmp/data/det_roi") if m == "yolo11n_gtroi" else DET
+        if m == "rfdetr_small":
+            dets = run_rfdetr(k, 0)
+        else:
+            dets = run_yolo(k, 0, det, m)
+        r = evaluate(det / f"fold{k}" / "coco" / "test" / "_annotations.coco.json", dets)
         r.update(model=m, fold=k, seconds=time.time() - t0, n_dets=len(dets))
         json.dump(r, open(res, "w"), indent=1)
         print(f"{m} fold{k}: mAP50={r['mAP50']:.3f} mAP={r['mAP']:.3f} brand_acc={r['det_brand_acc']:.3f} ({r['seconds']/60:.1f} min)", flush=True)

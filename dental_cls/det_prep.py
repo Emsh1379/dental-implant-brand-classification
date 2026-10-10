@@ -13,8 +13,13 @@ import cv2, numpy as np, pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
 from common import CLASS_NAMES, parse_boxes
+from prep_crops import box_mask, pipeline
 
-SRC, CROPS, OUT, RES = Path("/tmp/data/toothfairy"), Path("/tmp/data/crops"), Path("/tmp/data/det"), 640
+SRC, CROPS, RES = Path("/tmp/data/toothfairy"), Path("/tmp/data/crops"), 640
+# DET_ROI=1: images processed with the original pipeline, whose CLAHE/rescale ROI is the ground-truth box
+# (reproduces the previous runs' setting, to measure how much that leaks the box location)
+ROI = os.environ.get("DET_ROI") == "1"
+OUT = Path("/tmp/data/det_roi" if ROI else "/tmp/data/det")
 meta = pd.read_csv(CROPS / "meta.csv", index_col="idx")
 folds = [f for f in json.load(open(CROPS / "folds.json"))["folds"] if f["rep"] == 0]
 img_dir = OUT / "images"; img_dir.mkdir(parents=True, exist_ok=True)
@@ -23,8 +28,10 @@ boxes = {}
 for name, sp in split_of.items():
     dst = img_dir / name
     if not dst.exists():
-        im = cv2.imread(str(SRC / sp / "images" / name), cv2.IMREAD_GRAYSCALE)
-        cv2.imwrite(str(dst), cv2.resize(im, (RES, RES), interpolation=cv2.INTER_AREA))
+        im = cv2.resize(cv2.imread(str(SRC / sp / "images" / name), cv2.IMREAD_GRAYSCALE), (RES, RES), interpolation=cv2.INTER_AREA)
+        if ROI:
+            im = pipeline(im, box_mask(parse_boxes(SRC / sp / "labels" / (Path(name).stem + ".txt"))))
+        cv2.imwrite(str(dst), im)
     boxes[name] = parse_boxes(SRC / sp / "labels" / (Path(name).stem + ".txt"))
 print("images", len(boxes), flush=True)
 
