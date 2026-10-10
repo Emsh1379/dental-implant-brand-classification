@@ -21,8 +21,9 @@ te = np.array(fd["test"]); rng = np.random.default_rng(0)
 pick = [int(i) for c in range(3) for i in rng.choice(te[meta.brand.values[te] == c], 2, replace=False)]
 
 def target_layer(name, m):
-    return {"custom_cnn": m.features[-4], "vgg16": m.features[-1], "resnet50": m.layer4[-1], "densenet121": m.features[-1],
-            "efficientnet_b0": m.features[-1], "vit_b_16": m.encoder.layers[-1].ln_1}[name]
+    return {"custom_cnn": lambda: m.features[-4], "vgg16": lambda: m.features[-2], "resnet50": lambda: m.layer4[-1],
+            "densenet121": lambda: m.features[-1], "efficientnet_b0": lambda: m.features[-1],
+            "vit_b_16": lambda: m.encoder.layers[-1].ln_1}[name]()
 
 def reshape_vit(t):  # [B,197,768] -> [B,768,14,14]
     return t[:, 1:, :].reshape(t.size(0), 14, 14, -1).permute(0, 3, 1, 2)
