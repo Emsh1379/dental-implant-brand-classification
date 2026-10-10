@@ -19,3 +19,27 @@ r0_f1_ab_no_unsharp_densenet121: acc=0.945 f1=0.847 (118s)
 r0_f1_fixed_densenet121: acc=0.967 f1=0.895 (119s)
 /kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
   scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f2_ab_no_sharpen_densenet121: acc=0.982 f1=0.941 (121s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f2_ab_no_clahe_densenet121: acc=0.976 f1=0.922 (128s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f2_ab_no_rescale_densenet121: acc=0.979 f1=0.931 (120s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f2_ch3_densenet121: acc=0.979 f1=0.933 (122s)
+r0_f3_ab_no_blur_densenet121: acc=0.984 f1=0.966 (119s)
+r0_f3_ab_no_unsharp_densenet121: acc=0.987 f1=0.962 (119s)
+r0_f3_fixed_densenet121: acc=0.997 f1=0.988 (120s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f4_ab_no_sharpen_densenet121: acc=0.980 f1=0.968 (129s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f4_ab_no_clahe_densenet121: acc=0.969 f1=0.921 (128s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+r0_f4_ab_no_rescale_densenet121: acc=0.986 f1=0.982 (127s)
+/kaggle/working/dental_cls/train_cv.py:89: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
