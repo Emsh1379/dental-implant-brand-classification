@@ -8,3 +8,10 @@ Downloading: "https://download.pytorch.org/models/vit_b_16-c867db91.pth" to /roo
   0%|          | 0.00/330M [00:00<?, ?B/s]  5%|▌         | 18.0M/330M [00:00<00:01, 188MB/s] 11%|█         | 36.8M/330M [00:00<00:01, 193MB/s] 17%|█▋        | 55.6M/330M [00:00<00:01, 195MB/s] 23%|██▎       | 74.4M/330M [00:00<00:01, 195MB/s] 28%|██▊       | 93.5M/330M [00:00<00:01, 197MB/s] 34%|███▍      | 112M/330M [00:00<00:01, 197MB/s]  40%|███▉      | 131M/330M [00:00<00:01, 196MB/s] 45%|████▌     | 150M/330M [00:00<00:00, 197MB/s] 51%|█████     | 169M/330M [00:00<00:00, 196MB/s] 57%|█████▋    | 188M/330M [00:01<00:00, 195MB/s] 62%|██████▏   | 206M/330M [00:01<00:00, 196MB/s] 68%|██████▊   | 225M/330M [00:01<00:00, 196MB/s] 74%|███████▍  | 244M/330M [00:01<00:00, 196MB/s] 80%|███████▉  | 263M/330M [00:01<00:00, 196MB/s] 85%|████████▌ | 282M/330M [00:01<00:00, 196MB/s] 91%|█████████ | 300M/330M [00:01<00:00, 195MB/s] 97%|█████████▋| 319M/330M [00:01<00:00, 195MB/s]100%|██████████| 330M/330M [00:01<00:00, 196MB/s]
 r0_f3_raw_vit_b_16: acc=0.987 f1=0.971 (262s)
 r0_f3_pipeline_vgg16: acc=0.981 f1=0.964 (188s)
+r0_f3_pipeline_densenet121: acc=0.981 f1=0.949 (117s)
+r0_f3_pipeline_vit_b_16: acc=0.990 f1=0.972 (261s)
+r0_f3_hat_vgg16: acc=0.977 f1=0.946 (188s)
+r0_f3_hat_densenet121: acc=1.000 f1=1.000 (117s)
+r0_f3_hat_vit_b_16: acc=0.994 f1=0.986 (261s)
+/kaggle/working/dental_cls/train_cv.py:87: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
