@@ -1,0 +1,51 @@
+[2026-10-10 20:09:59] [INFO] rf-detr - File /root/.roboflow/models/rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-10 20:09:59] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-10 20:09:59] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-10 20:10:00] [INFO] rf-detr - File /root/.roboflow/models/rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-10 20:10:03] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-10 20:10:03] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-10 20:10:04] [INFO] rf-detr - File /root/.roboflow/models/rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-10 20:10:06] [WARNING] rf-detr - Checkpoint has 90 classes but model is configured for 3. The detection head will be re-initialized to 3 classes.
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+/usr/local/lib/python3.13/dist-packages/lightning_fabric/loggers/csv_logs.py:268: Experiment logs directory /tmp/data/det_runs/rfdetr_small_f0/ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+[2026-10-10 20:10:06] [INFO] rf-detr - Building Roboflow train dataset with square resize at resolution 512
+[2026-10-10 20:10:06] [INFO] rf-detr - Using multi-scale training with square resize and scales: [672]
+[2026-10-10 20:10:06] [INFO] rf-detr - Built 1 Albumentations transforms from config
+[2026-10-10 20:10:06] [INFO] rf-detr - Built 1 Albumentations transforms from config
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+[2026-10-10 20:10:06] [INFO] rf-detr - Building Roboflow val dataset with square resize at resolution 512
+[2026-10-10 20:10:06] [INFO] rf-detr - Using multi-scale training with square resize and scales: [672]
+/usr/local/lib/python3.13/dist-packages/pytorch_lightning/callbacks/model_checkpoint.py:881: Checkpoint directory /tmp/data/det_runs/rfdetr_small_f0 exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+Loading `train_dataloader` to estimate number of stepping batches.
+/usr/local/lib/python3.13/dist-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+/usr/local/lib/python3.13/dist-packages/pytorch_lightning/utilities/model_summary/model_summary.py:242: Precision 16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+┏━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name        ┃ Type         ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ model       │ LWDETR       │ 31.8 M │ train │     0 │
+│ 1 │ criterion   │ SetCriterion │      0 │ train │     0 │
+│ 2 │ postprocess │ PostProcess  │      0 │ train │     0 │
+└───┴─────────────┴──────────────┴────────┴───────┴───────┘
+Trainable params: 31.8 M                                                        
+Non-trainable params: 0                                                         
+Total params: 31.8 M                                                            
+Total estimated model params size (MB): 127.193                                 
+Modules in train mode: 466                                                      
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+Seed set to 0
+/usr/local/lib/python3.13/dist-packages/rfdetr/models/_assignment.py:76: RuntimeWarning: Triton linear-assignment support is unavailable for this CUDA input; using SciPy on CPU.
+  assignment = torch_linear_assignment.batch_linear_assignment(stacked)
+/usr/local/lib/python3.13/dist-packages/pytorch_lightning/core/module.py:1333: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+[2026-10-10 20:11:36] [INFO] rf-detr - Skipping validation-loss computation: compute_val_loss='auto' found no scheduler or callback monitoring 'val/loss', so no 'val/loss' metric is logged this run. Set compute_val_loss=True to log it every validation epoch (for example to read the curve from metrics.csv, TensorBoard, or Weights & Biases).
