@@ -1,0 +1,7 @@
+detector,a,b,a_only_correct,b_only_correct,mcnemar_p,bego_a_only,bego_b_only
+rfdetr_small,one-stage (detector class),two-stage (detector box -> classifier),23,32,0.2806097176983541,2,18
+rfdetr_small,two-stage (detector box -> classifier),classifier on ground-truth box,11,20,0.14961278438568115,3,2
+rfdetr_small,one-stage (detector class),classifier on ground-truth box,25,43,0.038460053348927506,3,18
+yolo11n,one-stage (detector class),two-stage (detector box -> classifier),19,40,0.008641499683281734,0,20
+yolo11n,two-stage (detector box -> classifier),classifier on ground-truth box,12,17,0.45825831964612007,3,2
+yolo11n,one-stage (detector class),classifier on ground-truth box,25,51,0.0038362357516146263,2,21

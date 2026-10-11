@@ -7,6 +7,9 @@ Pipeline (run in this order, see script docstrings):
 3. `train_cv.py` – 6 classifiers (custom CNN, VGG16, ResNet50, DenseNet121, EfficientNet-B0, ViT-B/16) x 3 versions x folds. Class-weighted loss instead of oversampling; test fold untouched by model selection.
 4. `analyze.py` – mean ± SD over folds, pooled out-of-fold metrics with bootstrap CIs, confusion matrices, paired t / Wilcoxon / McNemar tests (Holm-corrected).
 5. `gradcam.py` – Grad-CAM panels from the fold-0 checkpoints.
+6. `analyze_auc.py` – per-brand ROC-AUC / PR-AUC from the saved probabilities (fold mean ± SD, pooled with bootstrap CI, paired bootstrap vs raw); `hard_cases.py` – crops that most configurations get wrong.
+7. `det_prep.py`, `det_train.py`, `analyze_det.py` – YOLO11n / RF-DETR Small on the same folds and their summary.
+8. `two_stage.py`, `analyze_ts.py` – detector box → classifier on the same folds (needs `train_cv.py --save_all`) and the box-jitter robustness test.
 
 Caveat: the `raw` version is the HAT image area-downsampled to 640px, a proxy for the original Roboflow download.
 

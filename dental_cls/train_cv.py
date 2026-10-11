@@ -52,7 +52,7 @@ def metrics(y, p):
                 macro_f1=float(f1s.mean()), f1=f1s.tolist(), recall=rec.tolist())
 
 
-def run_job(job, X, meta, folds, outdir, dev, ckpt_dir):
+def run_job(job, X, meta, folds, outdir, dev, ckpt_dir, save_all=False):
     rep, fold, ver, name = job
     tag = f"r{rep}_f{fold}_{ver}_{name}"
     path = outdir / f"{tag}.json"
@@ -99,7 +99,7 @@ def run_job(job, X, meta, folds, outdir, dev, ckpt_dir):
     res = dict(job=tag, rep=rep, fold=fold, version=ver, model=name, test_idx=te.tolist(), y=y_all[te].tolist(),
                probs=pt.round(5).tolist(), metrics=metrics(y_all[te].numpy(), pt), history=hist,
                train_counts=cnt.tolist(), seconds=time.time() - t0)
-    if rep == 0 and fold == 0:
+    if save_all or (rep == 0 and fold == 0):
         torch.save(best_state, ckpt_dir / f"{tag}.pt")
     json.dump(res, open(path, "w"))
     print(f"{tag}: acc={res['metrics']['acc']:.3f} f1={res['metrics']['macro_f1']:.3f} ({res['seconds']:.0f}s)", flush=True)
@@ -114,6 +114,7 @@ if __name__ == "__main__":
     ap.add_argument("--reps", type=int, nargs="+", default=[0])
     ap.add_argument("--versions", nargs="+", default=["raw", "pipeline", "hat"])
     ap.add_argument("--models", nargs="+", default=MODELS)
+    ap.add_argument("--save_all", action="store_true", help="keep the checkpoint of every fold (needed by two_stage.py)")
     a = ap.parse_args()
     dev = torch.device("cuda:0")  # CUDA_VISIBLE_DEVICES selects the GPU per shard
     torch.backends.cudnn.benchmark = True
@@ -128,5 +129,5 @@ if __name__ == "__main__":
         v = job[2]
         if v not in cache:
             cache = {v: torch.from_numpy(np.load(f"{a.crops}/{v}.npy"))}
-        run_job(job, cache[v], meta, folds, out, dev, ck)
+        run_job(job, cache[v], meta, folds, out, dev, ck, a.save_all)
     print("SHARD DONE", flush=True)
