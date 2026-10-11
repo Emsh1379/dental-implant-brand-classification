@@ -52,7 +52,7 @@ def metrics(y, p):
                 macro_f1=float(f1s.mean()), f1=f1s.tolist(), recall=rec.tolist())
 
 
-def run_job(job, X, meta, folds, outdir, dev, ckpt_dir, save_all=False):
+def run_job(job, X, meta, folds, outdir, dev, ckpt_dir, save_all=False, seed=0):
     rep, fold, ver, name = job
     tag = f"r{rep}_f{fold}_{ver}_{name}"
     path = outdir / f"{tag}.json"
@@ -61,7 +61,7 @@ def run_job(job, X, meta, folds, outdir, dev, ckpt_dir, save_all=False):
     fd = next(f for f in folds if f["rep"] == rep and f["fold"] == fold)
     y_all = torch.tensor(meta.brand.values)
     tr, va, te = (np.array(fd[k]) for k in ("train", "val", "test"))
-    torch.manual_seed(1000 * rep + fold); np.random.seed(1000 * rep + fold)
+    torch.manual_seed(1000 * rep + fold + 100000 * seed); np.random.seed(1000 * rep + fold + 100000 * seed)
     epochs, lr_b, lr_h = HPARAMS[name]
     model, head = build(name)
     model = model.to(dev).to(memory_format=torch.channels_last)
@@ -96,7 +96,7 @@ def run_job(job, X, meta, folds, outdir, dev, ckpt_dir, save_all=False):
             best = score; best_state = {k: v.detach().clone() for k, v in model.state_dict().items()}
     model.load_state_dict(best_state)
     pt = predict(model, X, te, dev)
-    res = dict(job=tag, rep=rep, fold=fold, version=ver, model=name, test_idx=te.tolist(), y=y_all[te].tolist(),
+    res = dict(job=tag, rep=rep, fold=fold, seed=seed, version=ver, model=name, test_idx=te.tolist(), y=y_all[te].tolist(),
                probs=pt.round(5).tolist(), metrics=metrics(y_all[te].numpy(), pt), history=hist,
                train_counts=cnt.tolist(), seconds=time.time() - t0)
     if save_all or (rep == 0 and fold == 0):
@@ -114,6 +114,7 @@ if __name__ == "__main__":
     ap.add_argument("--reps", type=int, nargs="+", default=[0])
     ap.add_argument("--versions", nargs="+", default=["raw", "pipeline", "hat"])
     ap.add_argument("--models", nargs="+", default=MODELS)
+    ap.add_argument("--seed", type=int, default=0, help="training seed offset; same folds, use a separate --out per seed")
     ap.add_argument("--save_all", action="store_true", help="keep the checkpoint of every fold (needed by two_stage.py)")
     a = ap.parse_args()
     dev = torch.device("cuda:0")  # CUDA_VISIBLE_DEVICES selects the GPU per shard
@@ -129,5 +130,5 @@ if __name__ == "__main__":
         v = job[2]
         if v not in cache:
             cache = {v: torch.from_numpy(np.load(f"{a.crops}/{v}.npy"))}
-        run_job(job, cache[v], meta, folds, out, dev, ck, a.save_all)
+        run_job(job, cache[v], meta, folds, out, dev, ck, a.save_all, a.seed)
     print("SHARD DONE", flush=True)

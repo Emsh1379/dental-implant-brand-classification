@@ -39,6 +39,10 @@
    The 5 classifier checkpoints (`results_ts_ckpt/`, 135 MB) and the raw detections (`dets_*.json`) are not on GitHub.
 4. Optional: YOLO11-OBB/seg at 1024 px; repeat CV with 3 seeds; use original Roboflow images for "raw"
 5. Done (2026-10-11): `FINAL_SUMMARY.md`
+7. In progress (started 2026-10-11, Kaggle): seed repeats – seeds 1 and 2 for DenseNet121 (raw, pipeline, hat, raw384) and ViT-B/16 (raw, pipeline, hat), same folds.
+   Result JSONs sync to Hugging Face `results_seeds/s1`, `results_seeds/s2` (35 jobs each when complete). Missing jobs can be re-run with
+   `python train_cv.py --seed S --out <dir>/sS --versions raw pipeline hat --models densenet121 vit_b_16` and `... --versions raw384 --models densenet121` (finished jobs are skipped).
+   Then: `python dental_cls/analyze_seeds.py --results backup/results backup/results2 backup/results_seeds/s1 backup/results_seeds/s2 --out backup/report_seeds`
 6. Ask a clinician to check the images in `backup/report3/consistent_errors.csv`
 
 CPU-only analysis (needs numpy, pandas, scipy, scikit-learn, matplotlib):
