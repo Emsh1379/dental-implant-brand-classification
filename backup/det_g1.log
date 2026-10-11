@@ -1,27 +1,29 @@
-[2026-10-10 20:09:59] [INFO] rf-detr - File /root/.roboflow/models/rf-detr-small.pth already exists with correct MD5 hash.
-[2026-10-10 20:09:59] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
-[2026-10-10 20:09:59] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
-[2026-10-10 20:10:00] [INFO] rf-detr - File /root/.roboflow/models/rf-detr-small.pth already exists with correct MD5 hash.
-[2026-10-10 20:10:03] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
-[2026-10-10 20:10:03] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
-[2026-10-10 20:10:04] [INFO] rf-detr - File /root/.roboflow/models/rf-detr-small.pth already exists with correct MD5 hash.
-[2026-10-10 20:10:06] [WARNING] rf-detr - Checkpoint has 90 classes but model is configured for 3. The detection head will be re-initialized to 3 classes.
+[2026-10-11 06:01:40] [INFO] rf-detr - Downloading pretrained weights for /root/.roboflow/models/rf-detr-small.pth
+/root/.roboflow/models/rf-detr-small.pth:   0%|          | 0.00/368M [00:00<?, ?iB/s]/root/.roboflow/models/rf-detr-small.pth:   1%|▏         | 5.47M/368M [00:00<00:06, 57.1MiB/s]/root/.roboflow/models/rf-detr-small.pth:   4%|▎         | 13.2M/368M [00:00<00:05, 71.4MiB/s]/root/.roboflow/models/rf-detr-small.pth:   6%|▌         | 21.1M/368M [00:00<00:04, 76.3MiB/s]/root/.roboflow/models/rf-detr-small.pth:   8%|▊         | 29.0M/368M [00:00<00:04, 79.0MiB/s]/root/.roboflow/models/rf-detr-small.pth:  10%|▉         | 36.5M/368M [00:00<00:04, 74.8MiB/s]/root/.roboflow/models/rf-detr-small.pth:  12%|█▏        | 44.0M/368M [00:00<00:04, 76.0MiB/s]/root/.roboflow/models/rf-detr-small.pth:  14%|█▍        | 52.5M/368M [00:00<00:04, 80.0MiB/s]/root/.roboflow/models/rf-detr-small.pth:  16%|█▋        | 60.3M/368M [00:00<00:03, 80.7MiB/s]/root/.roboflow/models/rf-detr-small.pth:  19%|█▊        | 68.3M/368M [00:00<00:03, 81.7MiB/s]/root/.roboflow/models/rf-detr-small.pth:  21%|██        | 76.4M/368M [00:01<00:03, 82.7MiB/s]/root/.roboflow/models/rf-detr-small.pth:  23%|██▎       | 84.3M/368M [00:01<00:03, 81.8MiB/s]/root/.roboflow/models/rf-detr-small.pth:  25%|██▌       | 92.1M/368M [00:01<00:03, 73.9MiB/s]/root/.roboflow/models/rf-detr-small.pth:  27%|██▋       | 99.3M/368M [00:01<00:03, 74.2MiB/s]/root/.roboflow/models/rf-detr-small.pth:  29%|██▉       | 107M/368M [00:01<00:03, 75.0MiB/s] /root/.roboflow/models/rf-detr-small.pth:  31%|███       | 114M/368M [00:01<00:03, 74.6MiB/s]/root/.roboflow/models/rf-detr-small.pth:  33%|███▎      | 122M/368M [00:01<00:03, 77.2MiB/s]/root/.roboflow/models/rf-detr-small.pth:  35%|███▌      | 130M/368M [00:01<00:03, 80.4MiB/s]/root/.roboflow/models/rf-detr-small.pth:  38%|███▊      | 139M/368M [00:01<00:02, 82.8MiB/s]/root/.roboflow/models/rf-detr-small.pth:  40%|████      | 147M/368M [00:01<00:02, 85.4MiB/s]/root/.roboflow/models/rf-detr-small.pth:  42%|████▏     | 156M/368M [00:02<00:02, 86.2MiB/s]/root/.roboflow/models/rf-detr-small.pth:  45%|████▍     | 165M/368M [00:02<00:02, 89.3MiB/s]/root/.roboflow/models/rf-detr-small.pth:  47%|████▋     | 174M/368M [00:02<00:02, 90.0MiB/s]/root/.roboflow/models/rf-detr-small.pth:  50%|████▉     | 183M/368M [00:02<00:02, 91.2MiB/s]/root/.roboflow/models/rf-detr-small.pth:  52%|█████▏    | 191M/368M [00:02<00:02, 89.9MiB/s]/root/.roboflow/models/rf-detr-small.pth:  54%|█████▍    | 200M/368M [00:02<00:01, 89.0MiB/s]/root/.roboflow/models/rf-detr-small.pth:  57%|█████▋    | 209M/368M [00:02<00:01, 84.9MiB/s]/root/.roboflow/models/rf-detr-small.pth:  59%|█████▉    | 217M/368M [00:02<00:01, 83.9MiB/s]/root/.roboflow/models/rf-detr-small.pth:  61%|██████    | 225M/368M [00:02<00:01, 83.7MiB/s]/root/.roboflow/models/rf-detr-small.pth:  63%|██████▎   | 233M/368M [00:02<00:01, 83.2MiB/s]/root/.roboflow/models/rf-detr-small.pth:  65%|██████▌   | 241M/368M [00:03<00:01, 83.7MiB/s]/root/.roboflow/models/rf-detr-small.pth:  68%|██████▊   | 249M/368M [00:03<00:01, 77.1MiB/s]/root/.roboflow/models/rf-detr-small.pth:  70%|██████▉   | 256M/368M [00:03<00:01, 75.3MiB/s]/root/.roboflow/models/rf-detr-small.pth:  72%|███████▏  | 263M/368M [00:03<00:01, 75.5MiB/s]/root/.roboflow/models/rf-detr-small.pth:  74%|███████▎  | 271M/368M [00:03<00:01, 77.3MiB/s]/root/.roboflow/models/rf-detr-small.pth:  76%|███████▋  | 281M/368M [00:03<00:01, 84.9MiB/s]/root/.roboflow/models/rf-detr-small.pth:  79%|███████▉  | 290M/368M [00:03<00:00, 87.9MiB/s]/root/.roboflow/models/rf-detr-small.pth:  81%|████████  | 299M/368M [00:03<00:00, 85.7MiB/s]/root/.roboflow/models/rf-detr-small.pth:  83%|████████▎ | 307M/368M [00:03<00:00, 84.0MiB/s]/root/.roboflow/models/rf-detr-small.pth:  86%|████████▌ | 315M/368M [00:04<00:00, 82.7MiB/s]/root/.roboflow/models/rf-detr-small.pth:  88%|████████▊ | 323M/368M [00:04<00:00, 81.9MiB/s]/root/.roboflow/models/rf-detr-small.pth:  90%|████████▉ | 331M/368M [00:04<00:00, 82.0MiB/s]/root/.roboflow/models/rf-detr-small.pth:  92%|█████████▏| 339M/368M [00:04<00:00, 83.1MiB/s]/root/.roboflow/models/rf-detr-small.pth:  94%|█████████▍| 347M/368M [00:04<00:00, 83.6MiB/s]/root/.roboflow/models/rf-detr-small.pth:  96%|█████████▋| 355M/368M [00:04<00:00, 84.1MiB/s]/root/.roboflow/models/rf-detr-small.pth:  99%|█████████▊| 363M/368M [00:04<00:00, 84.5MiB/s]/root/.roboflow/models/rf-detr-small.pth: 100%|██████████| 368M/368M [00:04<00:00, 80.4MiB/s]
+[2026-10-11 06:01:46] [INFO] rf-detr - MD5 validation successful for /root/.roboflow/models/rf-detr-small.pth
+[2026-10-11 06:01:46] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-11 06:01:46] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-11 06:01:48] [INFO] rf-detr - File /root/.roboflow/models/rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-11 06:01:52] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-11 06:01:52] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-11 06:01:54] [INFO] rf-detr - File /root/.roboflow/models/rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-11 06:01:57] [WARNING] rf-detr - Checkpoint has 90 classes but model is configured for 3. The detection head will be re-initialized to 3 classes.
 Using 16bit Automatic Mixed Precision (AMP)
 GPU available: True (cuda), used: True
 TPU available: False, using: 0 TPU cores
 💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
-/usr/local/lib/python3.13/dist-packages/lightning_fabric/loggers/csv_logs.py:268: Experiment logs directory /tmp/data/det_runs/rfdetr_small_f0/ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
-[2026-10-10 20:10:06] [INFO] rf-detr - Building Roboflow train dataset with square resize at resolution 512
-[2026-10-10 20:10:06] [INFO] rf-detr - Using multi-scale training with square resize and scales: [672]
-[2026-10-10 20:10:06] [INFO] rf-detr - Built 1 Albumentations transforms from config
-[2026-10-10 20:10:06] [INFO] rf-detr - Built 1 Albumentations transforms from config
+/usr/local/lib/python3.13/dist-packages/lightning_fabric/loggers/csv_logs.py:268: Experiment logs directory /tmp/data/det_runs/rfdetr_small_f1/ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+[2026-10-11 06:01:58] [INFO] rf-detr - Building Roboflow train dataset with square resize at resolution 512
+[2026-10-11 06:01:58] [INFO] rf-detr - Using multi-scale training with square resize and scales: [672]
+[2026-10-11 06:01:58] [INFO] rf-detr - Built 1 Albumentations transforms from config
+[2026-10-11 06:01:58] [INFO] rf-detr - Built 1 Albumentations transforms from config
 loading annotations into memory...
 Done (t=0.01s)
 creating index...
 index created!
-[2026-10-10 20:10:06] [INFO] rf-detr - Building Roboflow val dataset with square resize at resolution 512
-[2026-10-10 20:10:06] [INFO] rf-detr - Using multi-scale training with square resize and scales: [672]
-/usr/local/lib/python3.13/dist-packages/pytorch_lightning/callbacks/model_checkpoint.py:881: Checkpoint directory /tmp/data/det_runs/rfdetr_small_f0 exists and is not empty.
+[2026-10-11 06:01:58] [INFO] rf-detr - Building Roboflow val dataset with square resize at resolution 512
+[2026-10-11 06:01:58] [INFO] rf-detr - Using multi-scale training with square resize and scales: [672]
+/usr/local/lib/python3.13/dist-packages/pytorch_lightning/callbacks/model_checkpoint.py:881: Checkpoint directory /tmp/data/det_runs/rfdetr_small_f1 exists and is not empty.
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
 Loading `train_dataloader` to estimate number of stepping batches.
 /usr/local/lib/python3.13/dist-packages/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
@@ -44,155 +46,7 @@ Total estimated model params size (MB): 127.193
 Modules in train mode: 466                                                      
 Modules in eval mode: 0                                                         
 Total FLOPs: 0                                                                  
-Seed set to 0
+Seed set to 1
 /usr/local/lib/python3.13/dist-packages/rfdetr/models/_assignment.py:76: RuntimeWarning: Triton linear-assignment support is unavailable for this CUDA input; using SciPy on CPU.
   assignment = torch_linear_assignment.batch_linear_assignment(stacked)
 /usr/local/lib/python3.13/dist-packages/pytorch_lightning/core/module.py:1333: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
-[2026-10-10 20:11:36] [INFO] rf-detr - Skipping validation-loss computation: compute_val_loss='auto' found no scheduler or callback monitoring 'val/loss', so no 'val/loss' metric is logged this run. Set compute_val_loss=True to log it every validation epoch (for example to read the curve from metrics.csv, TensorBoard, or Weights & Biases).
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m1[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.3567[0m │ [1;36m0.6922[0m │ [1;36m0.3385[0m │ [1;36m0.6574[0m │ [1;36m0.6067[0m │ [1;36m0.5992[0m │ [1;36m0.6145[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:11:40] [INFO] rf-detr - Best EMA metric improved to 0.3567 (epoch 0)
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m2[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.3725[0m │ [1;36m0.6952[0m │ [1;36m0.3742[0m │ [1;36m0.7148[0m │ [1;36m0.6859[0m │ [1;36m0.6971[0m │ [1;36m0.6946[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:13:34] [INFO] rf-detr - Best EMA metric improved to 0.3725 (epoch 1)
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m3[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4406[0m │ [1;36m0.8448[0m │ [1;36m0.4192[0m │ [1;36m0.7030[0m │ [1;36m0.8208[0m │ [1;36m0.8255[0m │ [1;36m0.8176[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:15:31] [INFO] rf-detr - Best EMA metric improved to 0.4406 (epoch 2)
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m4[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4423[0m │ [1;36m0.8445[0m │ [1;36m0.4303[0m │ [1;36m0.7028[0m │ [1;36m0.8325[0m │ [1;36m0.8515[0m │ [1;36m0.8206[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:17:27] [INFO] rf-detr - Best EMA metric improved to 0.4423 (epoch 3)
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m5[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4728[0m │ [1;36m0.8959[0m │ [1;36m0.4516[0m │ [1;36m0.6895[0m │ [1;36m0.8621[0m │ [1;36m0.8060[0m │ [1;36m0.9421[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:19:20] [INFO] rf-detr - Best EMA metric improved to 0.4728 (epoch 4)
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m6[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4717[0m │ [1;36m0.9162[0m │ [1;36m0.4395[0m │ [1;36m0.6942[0m │ [1;36m0.8936[0m │ [1;36m0.8840[0m │ [1;36m0.9036[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m7[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4731[0m │ [1;36m0.9314[0m │ [1;36m0.4351[0m │ [1;36m0.6971[0m │ [1;36m0.9039[0m │ [1;36m0.8713[0m │ [1;36m0.9421[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:23:00] [INFO] rf-detr - Best EMA metric improved to 0.4731 (epoch 6)
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m8[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4853[0m │ [1;36m0.9463[0m │ [1;36m0.4479[0m │ [1;36m0.6879[0m │ [1;36m0.9146[0m │ [1;36m0.9261[0m │ [1;36m0.9050[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:25:02] [INFO] rf-detr - Best EMA metric improved to 0.4853 (epoch 7)
-            Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m9[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4887[0m │ [1;36m0.9222[0m │ [1;36m0.4739[0m │ [1;36m0.6766[0m │ [1;36m0.8898[0m │ [1;36m0.8471[0m │ [1;36m0.9435[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:27:14] [INFO] rf-detr - Best EMA metric improved to 0.4887 (epoch 8)
-           Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m10[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4946[0m │ [1;36m0.9366[0m │ [1;36m0.4594[0m │ [1;36m0.6856[0m │ [1;36m0.9172[0m │ [1;36m0.8943[0m │ [1;36m0.9421[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:29:24] [INFO] rf-detr - Best EMA metric improved to 0.4946 (epoch 9)
-           Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m11[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.5004[0m │ [1;36m0.9250[0m │ [1;36m0.4743[0m │ [1;36m0.6875[0m │ [1;36m0.9009[0m │ [1;36m0.8697[0m │ [1;36m0.9376[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:31:32] [INFO] rf-detr - Best EMA metric improved to 0.5004 (epoch 10)
-           Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m12[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4997[0m │ [1;36m0.9411[0m │ [1;36m0.4804[0m │ [1;36m0.6735[0m │ [1;36m0.9067[0m │ [1;36m0.9664[0m │ [1;36m0.8694[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-           Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m13[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.5105[0m │ [1;36m0.9513[0m │ [1;36m0.4846[0m │ [1;36m0.6807[0m │ [1;36m0.9342[0m │ [1;36m0.9252[0m │ [1;36m0.9435[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-[2026-10-10 20:35:49] [INFO] rf-detr - Best EMA metric improved to 0.5105 (epoch 12)
-           Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m14[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4937[0m │ [1;36m0.9378[0m │ [1;36m0.4910[0m │ [1;36m0.6756[0m │ [1;36m0.9124[0m │ [1;36m0.9206[0m │ [1;36m0.9065[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-           Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m15[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.5051[0m │ [1;36m0.9461[0m │ [1;36m0.4970[0m │ [1;36m0.6868[0m │ [1;36m0.9301[0m │ [1;36m0.8907[0m │ [1;36m0.9761[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-           Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m16[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4912[0m │ [1;36m0.9319[0m │ [1;36m0.4807[0m │ [1;36m0.6721[0m │ [1;36m0.9333[0m │ [1;36m0.9292[0m │ [1;36m0.9376[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-           Val [1m([0mema[1m)[0m [1m([0mEpoch [1;36m17[0m/[1;36m30[0m[1m)[0m — Overall Metrics            
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           mAP            ┃  mAR   ┃         F1 sweep         ┃
-┡━━━━━━━━┯━━━━━━━━┯━━━━━━━━╇━━━━━━━━╇━━━━━━━━┯━━━━━━━━┯━━━━━━━━┩
-│ [1;92m50:95[0m  │   [1;36m50[0m   │   [1;36m75[0m   │  @[1;36m500[0m  │   F1   │  Prec  │ Recall │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-│ [1;36m0.4985[0m │ [1;36m0.9357[0m │ [1;36m0.5057[0m │ [1;36m0.6744[0m │ [1;36m0.9124[0m │ [1;36m0.9232[0m │ [1;36m0.9036[0m │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┘
