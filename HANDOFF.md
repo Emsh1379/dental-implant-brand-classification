@@ -16,7 +16,7 @@
 * `backup/report3/` – per-brand ROC-AUC / PR-AUC (`auc_per_class.csv`, `auc_vs_raw.csv`, Bego curves) and `consistent_errors.csv` (label-review candidates)
 * `backup/det_results/` – detection: YOLO11n, YOLO11n on GT-ROI pipeline images, RF-DETR Small – 5 folds each, complete
 * `backup/ts_results/`, `backup/ts_report/`, `backup/results_ts/` – two-stage and box-jitter results, and the 5 retrained DenseNet121 raw384 jobs
-* `backup/results_seeds/`, `backup/report_seeds/` – seeds 1 and 2 and the 3-seed analysis
+* `backup/results_seeds/`, `backup/report_seeds/` – seeds 1 and 2 (35 jobs each), same-seed control re-runs (`s0_rerun384`, `s1_rerun224`, `s2_rerun224`) and the 3-seed analysis
 * `backup/det_report/` – detection summary (`summary.csv`, `per_fold.csv`, `comparisons.csv`)
 * `FINAL_SUMMARY.md` (start here for the paper), `RESULTS_SEEDS.md`, `RESULTS.md`, `RESULTS_ROUND2.md`, `RESULTS_AUC.md`, `RESULTS_DETECTION.md`, `RESULTS_TWO_STAGE.md`, `PREVIOUS_vs_NEW.md`, `COMPARISON_WITH_PAPER.md`
 
@@ -25,11 +25,13 @@
 `checkpoints/` + `checkpoints_round2/` (fold-0 classifier weights), `det_results/`, `det_checkpoints/` (YOLO best.pt, RF-DETR checkpoint_best_total.pth), `logs/`
 
 ## Key results (5-fold group-stratified CV, 1,590 test crops, ~76 Bego)
-* Best classifier: **DenseNet121, raw crops 384 px** – macro-F1 0.955, balanced acc 0.972, acc 0.982, Bego recall 0.950
+* Best classifiers (3-seed means, raw 224 px crops): **ViT-B/16 macro-F1 0.951, DenseNet121 0.944** (acc 0.984 / 0.981, Bego recall 0.912 / 0.908).
+  DenseNet121 raw 384 px was 0.955 in its first run (Bego recall 0.950) but 0.936 over 3 seeds – no gain over 224 px
 * Preprocessing pipeline never beats raw; significantly worse for DenseNet121/ViT; strong sharpening is the most harmful step; HAT gives no gain
 * Detection, 5 folds (mAP50 / mAP50-95 / brand acc / brand macro-F1): YOLO11n 0.887/0.451/0.963/0.905; RF-DETR Small 0.900/0.479/0.968/0.917 (no significant difference)
 * Per-brand AUC: best model macro ROC-AUC 0.998, Bego PR-AUC 0.951; Bicon/ITI ROC-AUC ≥ 0.989 for all pretrained models; pipeline shows no AUC benefit, but its AUC loss is small (the significant loss is in macro-F1)
-* 3 seeds: pipeline below raw in every seed; significant for DenseNet121 (−0.021), not for ViT-B/16 (−0.014); HAT = raw; the 384 px gain is within seed noise
+* 3 seeds: pipeline below raw in every seed; significant for DenseNet121 (−0.021), not for ViT-B/16 (−0.014); HAT = raw; 384 px = 224 px (−0.008, p = 0.14)
+* Training is not deterministic: the same seed re-run moves the 5-fold mean macro-F1 by 0.006–0.027, so single-run differences below ≈ 0.02 are noise
 * 22 test crops are wrong in most of the 36 classifier configurations (ITI-178 and Bicon-285 in all 36) – candidates for label review
 * GT-ROI preprocessing leak: YOLO11n mAP50-95 0.45 → 0.80 with no gain in brand accuracy – explains the old ~0.90 mAP50-95
 
@@ -41,8 +43,8 @@
    The 5 classifier checkpoints (`results_ts_ckpt/`, 135 MB) and the raw detections (`dets_*.json`) are not on GitHub.
 4. Optional: YOLO11-OBB/seg at 1024 px; repeat CV with 3 seeds; use original Roboflow images for "raw"
 5. Done (2026-10-11): `FINAL_SUMMARY.md`
-7. Mostly done (2026-10-12), see `RESULTS_SEEDS.md`: seed repeats – seeds 1 and 2 for DenseNet121 (raw, pipeline, hat, raw384) and ViT-B/16 (raw, pipeline, hat), same folds.
-   Result JSONs sync to Hugging Face `results_seeds/s1`, `results_seeds/s2` (30 of 35 jobs each: **DenseNet121 raw384 seeds 1 and 2 are missing**, the Kaggle session ended). Missing jobs can be re-run with
+7. Done (2026-10-12), see `RESULTS_SEEDS.md`: seed repeats – seeds 1 and 2 for DenseNet121 (raw, pipeline, hat, raw384) and ViT-B/16 (raw, pipeline, hat), same folds,
+   35 of 35 jobs each, plus 15 same-seed control jobs (DenseNet121 raw384 seed 0, raw seeds 1 and 2). Result JSONs are on GitHub and on Hugging Face under `results_seeds/`. To re-run:
    `python train_cv.py --seed S --out <dir>/sS --versions raw pipeline hat --models densenet121 vit_b_16` and `... --versions raw384 --models densenet121` (finished jobs are skipped).
    Then: `python dental_cls/analyze_seeds.py --results backup/results backup/results2 backup/results_seeds/s1 backup/results_seeds/s2 --out backup/report_seeds`
 6. Ask a clinician to check the images in `backup/report3/consistent_errors.csv`

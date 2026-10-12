@@ -14,7 +14,7 @@ Details: `RESULTS.md` (round 1), `RESULTS_ROUND2.md` (ablation, resolution), `RE
 
 | system | accuracy | macro-F1 | Bego recall | macro ROC-AUC | Bego PR-AUC |
 |---|---|---|---|---|---|
-| **DenseNet121, raw crops 384 px** (best) | 0.982 | **0.955 ± 0.024** | **0.950** | 0.998 | 0.951 |
+| DenseNet121, raw crops 384 px (best single run; 3-seed mean 0.936, see below) | 0.982 | 0.955 ± 0.024 | 0.950 | 0.998 | 0.951 |
 | DenseNet121, raw 224 px | 0.983 | 0.950 ± 0.030 | 0.914 | 0.992 | 0.907 |
 | ViT-B/16, raw 224 px | 0.984 | 0.950 ± 0.028 | 0.869 | 0.988 | 0.904 |
 | DenseNet121, original preprocessing pipeline | 0.968 | 0.917 ± 0.026 | 0.876 | 0.995 | 0.888 |
@@ -26,7 +26,8 @@ Details: `RESULTS.md` (round 1), `RESULTS_ROUND2.md` (ablation, resolution), `RE
 | YOLO11n (detector, brand from boxes) | 0.963 | 0.905 ± 0.040 | 0.690 | – | – |
 
 The classifier rows are the original single seed. With 3 seeds (`RESULTS_SEEDS.md`) the macro-F1 means are: DenseNet121 raw 0.944, pipeline 0.923, HAT 0.945;
-ViT-B/16 raw 0.951, pipeline 0.936, HAT 0.951. Raw 384 px has one seed plus one retraining (0.955 and 0.950).
+ViT-B/16 raw 0.951, pipeline 0.936, HAT 0.951; DenseNet121 raw 384 px **0.936** (0.955 / 0.929 / 0.925) – the 384 px row above is its most favourable run,
+and 384 px is not better than 224 px. Quote the 3-seed means in the paper: best single models are ViT-B/16 raw 0.951 and DenseNet121 raw 0.944 at 224 px.
 Classifier accuracy / macro-F1 / Bego recall are fold means (scratch CNN accuracy and Bego recall: pooled); AUCs are pooled out-of-fold.
 Classifiers are given ground-truth boxes; detectors and two-stage systems must find the implant first, and a missed implant counts as an error.
 The two-stage rows use DenseNet121 raw 384 px retrained per fold (0.950 ± 0.027 on ground-truth boxes, against 0.955 ± 0.024 in the first run).
@@ -34,7 +35,8 @@ The two-stage rows use DenseNet121 raw 384 px retrained per fold (0.950 ± 0.027
 Detection quality: mAP50 0.887 ± 0.033 (YOLO11n) and 0.900 ± 0.020 (RF-DETR Small); mAP50-95 0.451 ± 0.042 and 0.479 ± 0.035.
 
 ## What the paper can claim
-1. **A fine-tuned pretrained classifier on plain crops reaches macro-F1 0.955 / accuracy 0.982 on the 3-class task** under leakage-free CV.
+1. **A fine-tuned pretrained classifier on plain crops reaches macro-F1 ≈ 0.94–0.95 / accuracy ≈ 0.98 on the 3-class task** under leakage-free CV
+   (3-seed means: DenseNet121 0.944 / 0.981, ViT-B/16 0.951 / 0.984; single runs range 0.925–0.958). Do not quote 0.955 as the result – it is the best of 5 runs at 384 px.
    Pretrained models are all within 0.92–0.955 macro-F1; the scratch CNN is clearly worse (0.78–0.82).
 2. **Hand-crafted enhancement does not help.** The sharpen / CLAHE / unsharp pipeline is never better than raw crops and gives
    lower macro-F1 in every one of 3 training seeds for both DenseNet121 and ViT-B/16. Seed-averaged, the loss is significant for DenseNet121
@@ -43,8 +45,9 @@ Detection quality: mAP50 0.887 ± 0.033 (YOLO11n) and 0.900 ± 0.020 (RF-DETR Sm
    (Bego PR-AUC lower for all five pretrained models), but the AUC loss is small and mostly not significant – word this as "no benefit, lower macro-F1".
 3. **HAT super-resolution gives no consistent benefit** at 224 or 384 px. One exception to report honestly: EfficientNet-B0 at 224 px
    has higher Bego PR-AUC with HAT (+0.074, p < 0.001), not reproduced at 384 px or in any other model.
-4. **Higher resolution is at least as good, not yet a proven gain.** Raw 384 px crops gave the best single-seed macro-F1, Bego recall (0.950) and AUCs,
-   but its margin over the 3-seed raw 224 px mean (+0.006 to +0.011) is the size of the seed noise; seeds 1 and 2 at 384 px are still to run.
+4. **Higher resolution (384 px) gives no gain.** Raw 384 px crops gave the best macro-F1, Bego recall (0.950) and AUCs in the first run, but seeds 1 and 2
+   came out at 0.929 and 0.925: 3-seed mean 0.936 vs 0.944 at 224 px (Δ −0.008, paired t p = 0.14, 384 px better in 1 of 5 folds), same seed-averaged Bego recall (0.909 vs 0.908).
+   The round-2 AUC numbers for 384 px (macro ROC-AUC 0.998, Bego PR-AUC 0.951) are from that first run only and should be quoted with this caveat.
 5. **Preprocessing that uses the annotated implant region leaks the label location.** With GT-ROI preprocessing YOLO11n mAP50-95 goes
    from 0.451 to 0.799 (all 5 folds, p = 0.0003) with no gain in mAP50, brand accuracy or Bego recall. This explains very high mAP50-95 values from such pipelines.
 6. **Detectors are slightly below the crop classifier on brand, and clearly below on Bego** (recall 0.69–0.75 vs 0.91–0.95).
@@ -57,8 +60,9 @@ Detection quality: mAP50 0.887 ± 0.033 (YOLO11n) and 0.900 ± 0.020 (RF-DETR Sm
 9. **Bego is the limiting class everywhere.** Bicon and ITI ROC-AUC ≥ 0.989 for every pretrained model; the most consistent errors are ITI↔Bego confusions.
 
 ## Limits to state in the paper
-* One repetition of the 5-fold split; 3 training seeds only for DenseNet121 / ViT-B/16 on raw, pipeline and HAT, one seed for everything else.
-  Seed noise: ≈ 0.005–0.012 on a 5-fold mean macro-F1, up to 0.07 on Bego recall. Fold-level tests have little power (minimum Wilcoxon p = 0.0625).
+* One repetition of the 5-fold split; 3 training seeds only for DenseNet121 (raw, pipeline, HAT, raw 384 px) and ViT-B/16 (raw, pipeline, HAT), one seed for everything else.
+  Training noise: SD ≈ 0.005–0.017 on a 5-fold mean macro-F1, up to 0.10 on Bego recall. Training is not deterministic: repeating a run with the *same* seed moved the
+  5-fold mean by 0.006–0.027 (`RESULTS_SEEDS.md`, "Run-to-run variation"), so single-run differences below ≈ 0.02 macro-F1 mean nothing. Fold-level tests have little power (minimum Wilcoxon p = 0.0625).
 * Only 76 Bego test implants: Bego recall and PR-AUC have wide CIs (≈ ±0.06), and a handful of crops move them by several points.
 * "Raw" images are the HAT images area-downsampled to 640 px, a proxy for the original Roboflow export.
 * The two-stage classifier was trained on ground-truth crops only, it cannot reject false detections, and the detector thresholds (0.3 / 0.5) were not tuned.
@@ -67,6 +71,7 @@ Detection quality: mAP50 0.887 ± 0.033 (YOLO11n) and 0.900 ± 0.020 (RF-DETR Sm
 * Single data source (Roboflow dataset); no external test set.
 
 ## Still open (needs a GPU)
-1. DenseNet121 raw 384 px seeds 1 and 2 (10 jobs, ≈ 1 h on one T4) – the Kaggle session ended before they ran.
+1. Done (2026-10-12): DenseNet121 raw 384 px seeds 1 and 2, plus 3 same-seed control re-runs – see `RESULTS_SEEDS.md`.
 1b. Optional: train the two-stage classifier on jittered / detector boxes and add a "no implant" class; tune the detector threshold on validation folds.
-2. Optional: 3 seeds / repeated CV for the top models, original Roboflow images for "raw", YOLO11-OBB/seg at 1024 px.
+2. Optional: seeds for the other four models and for the round-2 ablation (all single-run, so their differences below ≈ 0.02 are untested), AUCs averaged over seeds,
+   repeated CV with new fold splits, original Roboflow images for "raw", YOLO11-OBB/seg at 1024 px.
