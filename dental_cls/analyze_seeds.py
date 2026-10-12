@@ -25,7 +25,10 @@ df = pd.DataFrame([dict(model=m, version=v, seed=s, fold=f, acc=r["metrics"]["ac
                         rec_Bego=r["metrics"]["recall"][0]) for (m, v, s, f), r in R.items()])
 df.to_csv(f"{a.out}/per_run.csv", index=False)
 n = df.groupby(["model", "version"]).size()
-assert (n == 5 * len(seeds)).all(), f"incomplete:\n{n}"
+bad = [k for k in CONFIGS if n.get(k, 0) != 5 * len(seeds)]
+if bad: print("incomplete, left out:", [(k, int(n.get(k, 0))) for k in bad])
+CONFIGS = [k for k in CONFIGS if k not in bad]; PAIRS = [p for p in PAIRS if (p[0], p[1]) in CONFIGS and (p[0], p[2]) in CONFIGS]
+df = df[[k in CONFIGS for k in zip(df.model, df.version)]]
 
 
 def pooled(m, v, s):

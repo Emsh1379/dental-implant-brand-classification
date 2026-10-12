@@ -10,6 +10,7 @@ Pipeline (run in this order, see script docstrings):
 6. `analyze_auc.py` – per-brand ROC-AUC / PR-AUC from the saved probabilities (fold mean ± SD, pooled with bootstrap CI, paired bootstrap vs raw); `hard_cases.py` – crops that most configurations get wrong.
 7. `det_prep.py`, `det_train.py`, `analyze_det.py` – YOLO11n / RF-DETR Small on the same folds and their summary.
 8. `two_stage.py`, `analyze_ts.py` – detector box → classifier on the same folds (needs `train_cv.py --save_all`) and the box-jitter robustness test.
+9. `train_cv.py --seed S` + `analyze_seeds.py` – repeats with other training seeds on the same folds, seed-averaged comparisons.
 
 Caveat: the `raw` version is the HAT image area-downsampled to 640px, a proxy for the original Roboflow download.
 
