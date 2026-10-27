@@ -1,0 +1,5 @@
+review_no,file,ct_image,patient,pred,prob,p_Bego,p_Bicon,p_ITI,models_agree,knn_dn,knn_vit,nn_sim_dn,nn_sim_vit,in_distribution,candidate,rank
+0,62_1.jpg,62,62,ITI,0.796,0.1858,0.0182,0.796,True,10.0,10.0,0.8774,0.8691,True,True,0.695107
+1,663_1.jpg,663,663,ITI,0.7716,0.2091,0.0192,0.7716,True,10.0,10.0,0.8908,0.8118,True,True,0.6568631
+2,505_0.jpg,505,505,ITI,0.7734,0.1884,0.0382,0.7734,True,10.0,10.0,0.8508,0.8337,True,True,0.65139616
+3,222_1.jpg,222,222,ITI,0.7746,0.2007,0.0247,0.7746,True,10.0,10.0,0.8518,0.8273,True,True,0.65031546

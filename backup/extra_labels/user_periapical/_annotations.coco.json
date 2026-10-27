@@ -1,0 +1,420 @@
+{
+ "images": [
+  {
+   "id": 0,
+   "file_name": "ubego-00.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "Screenshot 2026-10-26 013414.png"
+  },
+  {
+   "id": 1,
+   "file_name": "ubego-01.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568349_y.jpg"
+  },
+  {
+   "id": 2,
+   "file_name": "ubego-02.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568350_y.jpg"
+  },
+  {
+   "id": 3,
+   "file_name": "ubego-03.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568351_y.jpg"
+  },
+  {
+   "id": 4,
+   "file_name": "ubego-04.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568352_y.jpg"
+  },
+  {
+   "id": 5,
+   "file_name": "ubego-05.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568354_y.jpg"
+  },
+  {
+   "id": 6,
+   "file_name": "ubego-06.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568355_y.jpg"
+  },
+  {
+   "id": 7,
+   "file_name": "ubego-07.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568356_y.jpg"
+  },
+  {
+   "id": 8,
+   "file_name": "ubego-08.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568357_y.jpg"
+  },
+  {
+   "id": 9,
+   "file_name": "ubego-09.png",
+   "width": 640,
+   "height": 640,
+   "source_file": "photo_5976802556006568358_y.jpg"
+  }
+ ],
+ "annotations": [
+  {
+   "id": 0,
+   "image_id": 0,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    414.5845025526093,
+    146.11758067236553,
+    126.95094098194562,
+    287.8639632445638
+   ],
+   "area": 36544.601008689584,
+   "models": 5,
+   "conf": 0.61,
+   "vote": [
+    4,
+    0,
+    1
+   ],
+   "snapped": false
+  },
+  {
+   "id": 1,
+   "image_id": 0,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    112.0,
+    170.0,
+    104.0,
+    273.0
+   ],
+   "area": 28392.0,
+   "models": 5,
+   "conf": 0.437,
+   "vote": [
+    3,
+    0,
+    2
+   ],
+   "snapped": true
+  },
+  {
+   "id": 2,
+   "image_id": 1,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    417.76114430505334,
+    58.00251406138547,
+    110.37325252876792,
+    281.09042359690653
+   ],
+   "area": 31024.86430707971,
+   "models": 5,
+   "conf": 0.695,
+   "vote": [
+    0,
+    0,
+    5
+   ],
+   "snapped": false
+  },
+  {
+   "id": 3,
+   "image_id": 1,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    514.4541238621493,
+    28.947880870311867,
+    110.85992045226828,
+    279.90281671061456
+   ],
+   "area": 31030.00399490456,
+   "models": 5,
+   "conf": 0.611,
+   "vote": [
+    0,
+    0,
+    5
+   ],
+   "snapped": false
+  },
+  {
+   "id": 4,
+   "image_id": 3,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    513.0,
+    320.0,
+    107.0,
+    262.0
+   ],
+   "area": 28034.0,
+   "models": 5,
+   "conf": 0.74,
+   "vote": [
+    0,
+    0,
+    5
+   ],
+   "snapped": true
+  },
+  {
+   "id": 5,
+   "image_id": 3,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    369.0,
+    297.0,
+    119.0,
+    267.0
+   ],
+   "area": 31773.0,
+   "models": 5,
+   "conf": 0.737,
+   "vote": [
+    0,
+    0,
+    5
+   ],
+   "snapped": true
+  },
+  {
+   "id": 6,
+   "image_id": 3,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    225.0,
+    264.0,
+    104.0,
+    267.0
+   ],
+   "area": 27768.0,
+   "models": 5,
+   "conf": 0.616,
+   "vote": [
+    2,
+    0,
+    3
+   ],
+   "snapped": true
+  },
+  {
+   "id": 7,
+   "image_id": 4,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    415.0,
+    119.0,
+    111.0,
+    249.0
+   ],
+   "area": 27639.0,
+   "models": 5,
+   "conf": 0.536,
+   "vote": [
+    2,
+    0,
+    3
+   ],
+   "snapped": true
+  },
+  {
+   "id": 8,
+   "image_id": 4,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    163.57612841247342,
+    59.77802501281366,
+    114.46317731674267,
+    285.3769657067274
+   ],
+   "area": 32665.15422780313,
+   "models": 5,
+   "conf": 0.531,
+   "vote": [
+    2,
+    0,
+    3
+   ],
+   "snapped": false
+  },
+  {
+   "id": 9,
+   "image_id": 5,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    277.0,
+    99.0,
+    106.0,
+    312.0
+   ],
+   "area": 33072.0,
+   "models": 5,
+   "conf": 0.693,
+   "vote": [
+    0,
+    0,
+    5
+   ],
+   "snapped": true
+  },
+  {
+   "id": 10,
+   "image_id": 6,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    339.0,
+    94.0,
+    112.0,
+    321.0
+   ],
+   "area": 35952.0,
+   "models": 5,
+   "conf": 0.737,
+   "vote": [
+    0,
+    0,
+    5
+   ],
+   "snapped": true
+  },
+  {
+   "id": 11,
+   "image_id": 7,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    281.0,
+    99.0,
+    97.0,
+    321.0
+   ],
+   "area": 31137.0,
+   "models": 5,
+   "conf": 0.663,
+   "vote": [
+    1,
+    0,
+    4
+   ],
+   "snapped": true
+  },
+  {
+   "id": 12,
+   "image_id": 8,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    96.0,
+    117.0,
+    145.0,
+    347.0
+   ],
+   "area": 50315.0,
+   "models": 5,
+   "conf": 0.551,
+   "vote": [
+    1,
+    0,
+    4
+   ],
+   "snapped": true
+  },
+  {
+   "id": 13,
+   "image_id": 9,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    344.80781080761466,
+    30.78237375747289,
+    118.08028543342795,
+    294.5312757218046
+   ],
+   "area": 34778.33710630235,
+   "models": 5,
+   "conf": 0.667,
+   "vote": [
+    0,
+    0,
+    5
+   ],
+   "snapped": false
+  },
+  {
+   "id": 14,
+   "image_id": 2,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    192.0,
+    173.0,
+    119.0,
+    301.0
+   ],
+   "area": 35819.0,
+   "models": 0,
+   "conf": null,
+   "vote": null,
+   "snapped": true,
+   "manual_rough_box": true
+  },
+  {
+   "id": 15,
+   "image_id": 2,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    407.0,
+    155.0,
+    115.0,
+    294.0
+   ],
+   "area": 33810.0,
+   "models": 0,
+   "conf": null,
+   "vote": null,
+   "snapped": true,
+   "manual_rough_box": true
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "Bego"
+  },
+  {
+   "id": 1,
+   "name": "Bicon"
+  },
+  {
+   "id": 2,
+   "name": "ITI"
+  }
+ ]
+}

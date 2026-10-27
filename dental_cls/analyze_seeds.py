@@ -11,10 +11,17 @@ from statsmodels.stats.multitest import multipletests
 ap = argparse.ArgumentParser()
 ap.add_argument("--results", nargs="+", default=["/kaggle/working/results", "/kaggle/working/results2", "/kaggle/working/results_seeds/s1", "/kaggle/working/results_seeds/s2"])
 ap.add_argument("--out", default="/kaggle/working/report_seeds")
+ap.add_argument("--set", default="seeds", choices=["seeds", "orig"],
+                help="seeds: HAT-derived inputs; orig: crops from the original Roboflow images (raw_orig, pipeline_orig, see prep_orig.py)")
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
-CONFIGS = [("densenet121", v) for v in ("raw", "pipeline", "hat", "raw384")] + [("vit_b_16", v) for v in ("raw", "pipeline", "hat")]
-PAIRS = [("densenet121", "raw", "pipeline"), ("densenet121", "raw", "hat"), ("densenet121", "raw", "raw384"), ("densenet121", "hat", "pipeline"),
-         ("vit_b_16", "raw", "pipeline"), ("vit_b_16", "raw", "hat"), ("vit_b_16", "hat", "pipeline")]
+if a.set == "orig":
+    CONFIGS = [(m, v) for m in ("densenet121", "vit_b_16") for v in ("raw_orig", "pipeline_orig", "raw", "pipeline", "hat")]
+    PAIRS = [(m, x, y) for m in ("densenet121", "vit_b_16") for x, y in
+             (("raw_orig", "pipeline_orig"), ("raw_orig", "raw"), ("raw_orig", "hat"), ("pipeline_orig", "pipeline"))]
+else:
+    CONFIGS = [("densenet121", v) for v in ("raw", "pipeline", "hat", "raw384")] + [("vit_b_16", v) for v in ("raw", "pipeline", "hat")]
+    PAIRS = [("densenet121", "raw", "pipeline"), ("densenet121", "raw", "hat"), ("densenet121", "raw", "raw384"), ("densenet121", "hat", "pipeline"),
+             ("vit_b_16", "raw", "pipeline"), ("vit_b_16", "raw", "hat"), ("vit_b_16", "hat", "pipeline")]
 R = {}
 for d in a.results:
     for f in sorted(glob.glob(f"{d}/*.json")):

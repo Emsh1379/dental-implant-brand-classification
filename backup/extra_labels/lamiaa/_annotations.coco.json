@@ -1,0 +1,362 @@
+{
+ "images": [
+  {
+   "id": 0,
+   "file_name": "bego-40_jpg.rf.5d3ab130e21344d2c5d0b549b38db8ff.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 1,
+   "file_name": "bego-40_jpg.rf.855c8dda5f3296ca8db0c4aaf2597a46.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 2,
+   "file_name": "bego-40_jpg.rf.9882c64104a467f6086f89da00233618.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 3,
+   "file_name": "bego-40_jpg.rf.a55927e93d1b314a0203775027500fec.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 4,
+   "file_name": "bego-40_jpg.rf.b5214d11d4851d3134f0bc1b3f4f69f7.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 5,
+   "file_name": "bego-40_jpg.rf.bce76d0c9a43f328ff22c6a49c30ee9d.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 6,
+   "file_name": "bego-40_jpg.rf.f133c987f2d448d461ba3d587e1adb55.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 7,
+   "file_name": "bego-51_jpg.rf.3129fc63ade5ab87b381fda8329245cf.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 8,
+   "file_name": "bego-51_jpg.rf.d11a06bde280c245a2bcbd3de6900630.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 9,
+   "file_name": "bego-51_jpg.rf.eb30f853c8dccc3e15d26a992c075d9c.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 10,
+   "file_name": "bego-51_jpg.rf.fb7ef5a5795472ae37158cd2d9518956.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 11,
+   "file_name": "bego-52_jpg.rf.54815add2914e6aa845e204aa4fa7ef7.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 12,
+   "file_name": "bego-52_jpg.rf.5aa36872d3443477d16a08ab545dea19.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 13,
+   "file_name": "bego-52_jpg.rf.5ac2e644a56a94b391b22ff683f3dde7.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 14,
+   "file_name": "bego-52_jpg.rf.878f51994d06534b0247bd74a09e7e54.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 15,
+   "file_name": "bego-52_jpg.rf.c3e5c9c4d672ebe9f641c20894c25d78.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 16,
+   "file_name": "bego-52_jpg.rf.c54279b976e97491477467667d45fb56.jpg",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 17,
+   "file_name": "bego-52_jpg.rf.fac1eeaa9a2a69640603f9e2324f504c.jpg",
+   "width": 640,
+   "height": 640
+  }
+ ],
+ "annotations": [
+  {
+   "id": 0,
+   "image_id": 0,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    234.0,
+    242.0,
+    122.0,
+    281.0
+   ],
+   "area": 34282.0
+  },
+  {
+   "id": 1,
+   "image_id": 1,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    290.0,
+    117.0,
+    117.0,
+    286.0
+   ],
+   "area": 33462.0
+  },
+  {
+   "id": 2,
+   "image_id": 2,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    248.0,
+    123.0,
+    93.0,
+    286.0
+   ],
+   "area": 26598.0
+  },
+  {
+   "id": 3,
+   "image_id": 3,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    289.0,
+    118.0,
+    118.0,
+    285.0
+   ],
+   "area": 33630.0
+  },
+  {
+   "id": 4,
+   "image_id": 4,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    254.0,
+    121.0,
+    160.0,
+    282.0
+   ],
+   "area": 45120.0
+  },
+  {
+   "id": 5,
+   "image_id": 5,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    231.0,
+    120.0,
+    139.0,
+    283.0
+   ],
+   "area": 39337.0
+  },
+  {
+   "id": 6,
+   "image_id": 6,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    268.0,
+    117.0,
+    143.0,
+    285.0
+   ],
+   "area": 40755.0
+  },
+  {
+   "id": 7,
+   "image_id": 7,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    270.0,
+    142.0,
+    188.0,
+    299.0
+   ],
+   "area": 56212.0
+  },
+  {
+   "id": 8,
+   "image_id": 8,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    226.0,
+    155.0,
+    111.0,
+    275.0
+   ],
+   "area": 30525.0
+  },
+  {
+   "id": 9,
+   "image_id": 9,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    307.0,
+    149.0,
+    123.0,
+    293.0
+   ],
+   "area": 36039.0
+  },
+  {
+   "id": 10,
+   "image_id": 10,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    147.0,
+    307.0,
+    293.0,
+    123.0
+   ],
+   "area": 36039.0
+  },
+  {
+   "id": 11,
+   "image_id": 11,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    334.0,
+    67.0,
+    217.0,
+    393.0
+   ],
+   "area": 85281.0
+  },
+  {
+   "id": 12,
+   "image_id": 12,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    340.0,
+    67.0,
+    212.0,
+    390.0
+   ],
+   "area": 82680.0
+  },
+  {
+   "id": 13,
+   "image_id": 13,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    149.0,
+    26.0,
+    127.0,
+    417.0
+   ],
+   "area": 52959.0
+  },
+  {
+   "id": 14,
+   "image_id": 14,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    93.0,
+    63.0,
+    211.0,
+    396.0
+   ],
+   "area": 83556.0
+  },
+  {
+   "id": 15,
+   "image_id": 15,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    165.0,
+    20.0,
+    107.0,
+    422.0
+   ],
+   "area": 45154.0
+  },
+  {
+   "id": 16,
+   "image_id": 16,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    184.0,
+    95.0,
+    394.0,
+    206.0
+   ],
+   "area": 81164.0
+  },
+  {
+   "id": 17,
+   "image_id": 17,
+   "category_id": 0,
+   "iscrowd": 0,
+   "bbox": [
+    342.0,
+    62.0,
+    206.0,
+    394.0
+   ],
+   "area": 81164.0
+  }
+ ],
+ "categories": [
+  {
+   "id": 0,
+   "name": "Bego"
+  },
+  {
+   "id": 1,
+   "name": "Bicon"
+  },
+  {
+   "id": 2,
+   "name": "ITI"
+  }
+ ]
+}

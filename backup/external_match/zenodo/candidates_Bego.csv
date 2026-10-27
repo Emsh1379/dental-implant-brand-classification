@@ -1,0 +1,2 @@
+review_no,file,ct_image,patient,pred,prob,p_Bego,p_Bicon,p_ITI,models_agree,knn_dn,knn_vit,nn_sim_dn,nn_sim_vit,in_distribution,candidate,rank
+0,1059_15.jpg,1059,1059,Bego,0.9766,0.9766,0.0036,0.0199,True,10.0,10.0,0.8675,0.8098,True,True,0.8190256
