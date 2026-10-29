@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this benchmark or code, please cite it as below, and credit the Roboflow 'Dental implant' dataset (CC BY 4.0)."
+title: "Dental implant brand identification: a leakage-free benchmark (Bego / Bicon / ITI)"
+type: software
+authors:
+  - family-names: "Sharifi"
+    given-names: "Mohammad Emad"
+version: "1.0"
+date-released: "2026-10-29"
+license: MIT
+repository-code: "https://github.com/Emsh1379/dental-implant-brand-classification"
+url: "https://huggingface.co/datasets/emad2001/dental-implant-brand-benchmark"
+keywords:
+  - dental implants
+  - implant brand identification
+  - periapical radiographs
+  - data leakage
+  - benchmark
+  - deep learning
+references:
+  - type: dataset
+    title: "Dental implant"
+    authors:
+      - name: "Roboflow Universe user dental-implant-nyw2h"
+    url: "https://universe.roboflow.com/dental-implant-nyw2h/-dental-implant"
+    license: CC-BY-4.0

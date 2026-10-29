@@ -1,6 +1,7 @@
 # Final summary – dental implant brand classification benchmark
 
-Details: `RESULTS_ORIGINAL.md` (original Roboflow images – the raw baseline), `RESULTS_PAPER_PIPELINE.md` (Tiryaki et al. 2023 pipeline reproduced; random vs grouped split), `RESULTS_EXTRA_BEGO.md` and `RESULTS_EXTERNAL.md` (extra / external training data), `RESULTS.md` (round 1), `RESULTS_ROUND2.md` (ablation, resolution), `RESULTS_AUC.md` (per-brand AUC), `RESULTS_SEEDS.md` (3 training seeds – read this before quoting single-seed numbers),
+Benchmark release: `BENCHMARK.md` (folds, crop table, evaluator, baselines; data on Hugging Face emad2001/dental-implant-brand-benchmark).
+Details: `RESULTS_PROTOCOLS.md` (three published protocols, leaky vs leakage-free), `RESULTS_OPENSET_CALIBRATION.md` (unknown brands, calibration, deferral), `RESULTS_SYNTHETIC.md` (diffusion augmentation), `RESULTS_ORIGINAL.md` (original Roboflow images – the raw baseline), `RESULTS_PAPER_PIPELINE.md` (Tiryaki et al. 2023 pipeline reproduced; random vs grouped split), `RESULTS_EXTRA_BEGO.md` and `RESULTS_EXTERNAL.md` (extra / external training data), `RESULTS.md` (round 1), `RESULTS_ROUND2.md` (ablation, resolution), `RESULTS_AUC.md` (per-brand AUC), `RESULTS_SEEDS.md` (3 training seeds – read this before quoting single-seed numbers),
 `RESULTS_DETECTION.md` (detectors), `RESULTS_TWO_STAGE.md` (detector → classifier, box jitter), `COMPARISON_WITH_PAPER.md`, `PREVIOUS_vs_NEW.md`.
 
 ## Setup
@@ -72,6 +73,12 @@ Detection quality: mAP50 0.887 ± 0.033 (YOLO11n) and 0.900 ± 0.020 (RF-DETR Sm
 11. **More data from other sources did not help.** Auto-labelled Bego images (internet periapicals, panoramics) and pseudo-labelled candidates from three public
    datasets (OII-DS, Zenodo, Mendeley) never improved the best model; external candidates made ViT-B/16 significantly worse (ensemble McNemar p = 0.039).
    Panoramic / CT implant crops are mostly out of distribution for periapical models.
+
+12. **Three published protocols are inflated by leakage on this dataset** (`RESULTS_PROTOCOLS.md`): Lashaki et al. 2025 (3 brands 89.8 % → 84.1 %,
+   Bego recall 0.85 → 0.49), Tekis et al. 2025 (YOLO F1 0.956 → 0.857), Tiryaki et al. 2023 (98.4 % → 96.6 %). Their preprocessing does not help under a fair split.
+13. **Clinical reliability** (`RESULTS_OPENSET_CALIBRATION.md`): softmax confidence accepts 65–94 % of foreign implants, feature-distance rejection 27–32 %
+   (AUROC 0.95–0.99); temperature scaling ECE 0.25 → 0.01; deferring 5 % of cases removes 57 % of errors (ViT-B/16 ensemble 0.991 → 0.996 accuracy).
+14. **Diffusion-generated Bego crops lower Bego recall** (DenseNet121 0.935 → 0.820, p = 0.035; `RESULTS_SYNTHETIC.md`).
 
 ## Limits to state in the paper
 * One repetition of the 5-fold split; 3 training seeds only for DenseNet121 (raw, pipeline, HAT, raw 384 px) and ViT-B/16 (raw, pipeline, HAT), one seed for everything else.

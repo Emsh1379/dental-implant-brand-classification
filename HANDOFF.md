@@ -62,6 +62,10 @@
     OII-DS candidates are in numbered review sheets (Hugging Face `oii_match/review_*.jpg`) if a clinician wants to confirm them.
 11. Done (2026-10-27), `RESULTS_PAPER_PIPELINE.md`: Tiryaki et al. pipeline (`prep_paper.py`, `train_paper.py`, `analyze_paper.py`).
     Hand-checked angle labels would be needed for a paper-grade angle result.
+12. Done (2026-10-28), `RESULTS_SYNTHETIC.md`: per-fold class-conditional diffusion (`cdiff_brand.py`, `qc_syn.py`, `build_syn.py`, `syn_pipeline.py`).
+13. Done (2026-10-29), `RESULTS_PROTOCOLS.md` and `RESULTS_OPENSET_CALIBRATION.md` (`lashaki_protocol.py`, `tekis_yolo.py`, `openset.py`, `calibration.py`, `pipeline3.py`).
+14. Done (2026-10-29): benchmark release – `BENCHMARK.md`, `benchmark/` (crops.csv, folds.json, build_crops.py, evaluate.py, baselines/), public data on
+    Hugging Face `emad2001/dental-implant-brand-benchmark`. Clinician review pack: `make_review.py` -> 23 cases (22 persistent errors + the tiny empty box).
 6. Ask a clinician to check the images in `backup/report3/consistent_errors.csv`, and crop idx 2882 (box with no implant)
 
 CPU-only analysis (needs numpy, pandas, scipy, scikit-learn, matplotlib):
