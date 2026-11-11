@@ -1,9 +1,10 @@
 """Self-running pipeline: (1a) Lashaki protocol, (1b) Tekis protocol, (2) open-set rejection. Each stage is saved to Hugging Face.
-Run: setsid nohup python pipeline3.py > /kaggle/working/p3.log 2>&1 &   (needs the HF token in /root/.cache/huggingface/token)"""
+Run: setsid nohup python pipeline3.py > /kaggle/working/p3.log 2>&1 &   (needs the HF token in /root/.cache/huggingface/token and ROBOFLOW_API_KEY in the environment)"""
 import os, subprocess, threading, time
 from huggingface_hub import HfApi
 W, CODE = "/kaggle/working", "/kaggle/working/repo/dental_cls"; REPO = "emad2001/dental-implant-brand-classification"; api = HfApi()
-ENV = dict(os.environ, ROBOFLOW_API_KEY="c0IWgB7XKPnqth9eD8Qy")
+assert os.environ.get("ROBOFLOW_API_KEY"), "set ROBOFLOW_API_KEY in the environment (never commit it)"
+ENV = dict(os.environ)
 LA, TK, OS = "/tmp/data/lashaki", "/tmp/data/tekis", f"{W}/openset"
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)
 def sh(c, gpu=None, logf=None):

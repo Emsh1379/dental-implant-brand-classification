@@ -79,5 +79,15 @@ CPU-only analysis (needs numpy, pandas, scipy, scikit-learn, matplotlib):
 3. For detection: download `Teeth-Segmentation-ToothFairy-1-enahnced.zip` from `Mesh2001/Dental_implant`, unzip to `/tmp/data/toothfairy`, `pip install ultralytics "rfdetr[train]"`, run `det_prep.py`
 4. Keep outputs out of `/kaggle/working` when large (20 GB limit) – use `/tmp/data`
 
+## Tooling (tools/) – all secret-free, take credentials from environment variables
+* `tools/kaggle_exec.py` – run code/scripts on a Kaggle server (`KAGGLE_URL` env var)
+* `tools/kaggle_put.py` – copy local files to the server
+* `tools/sync_to_git.py` – pull result folders from the server into `backup/` and commit + push (optionally every N seconds)
+* `tools/hf_upload_loop.py` – run on the server; uploads folders to Hugging Face every N seconds (`HF_TOKEN` env var)
+Working rules for every session are in `CLAUDE.md`.
+
 ## Security
 Rotate the Hugging Face token, the GitHub token and the Roboflow API key that were shared in chat / in the notebook.
+
+Note (2026-11-11): `dental_cls/pipeline3.py` used to contain a hard-coded Roboflow key; it now reads `ROBOFLOW_API_KEY` from the environment, but the old
+key is still visible in git history (commit 01d9e0f) – it must be rotated at Roboflow. History was not rewritten.
